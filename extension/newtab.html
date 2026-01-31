@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multi-AI New Tab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Multi-AI Search</h1>
+      <form id="query-form" class="query-form">
+        <input
+          id="query-input"
+          name="query"
+          type="text"
+          placeholder="Type a prompt or question..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+      <p class="note">
+        Results are fetched directly from APIs configured in <code>config.js</code>.
+      </p>
+    </header>
+
+    <main class="pane-grid">
+      <section class="pane">
+        <div class="pane-header">
+          <h2>Gemini + Google</h2>
+          <div class="truth-block" id="truth-gemini">
+            <div class="truth-metric">
+              <span class="label">Truth Score</span>
+              <span class="value" data-truth-score>--</span>
+            </div>
+            <div class="truth-metric">
+              <span class="label">Claim Coverage</span>
+              <span class="value" data-coverage-score>--</span>
+            </div>
+            <div class="truth-claims" data-claim-list></div>
+          </div>
+        </div>
+        <div class="pane-body">
+          <section>
+            <h3>Gemini Response</h3>
+            <div class="content-box" id="gemini-output">Waiting for query.</div>
+          </section>
+          <section>
+            <h3>Google Search Results</h3>
+            <div class="content-box" id="google-results">Waiting for query.</div>
+          </section>
+        </div>
+      </section>
+
+      <section class="pane">
+        <div class="pane-header">
+          <h2>Claude</h2>
+          <div class="truth-block" id="truth-claude">
+            <div class="truth-metric">
+              <span class="label">Truth Score</span>
+              <span class="value" data-truth-score>--</span>
+            </div>
+            <div class="truth-metric">
+              <span class="label">Claim Coverage</span>
+              <span class="value" data-coverage-score>--</span>
+            </div>
+            <div class="truth-claims" data-claim-list></div>
+          </div>
+        </div>
+        <div class="pane-body">
+          <section>
+            <h3>Claude Response</h3>
+            <div class="content-box" id="claude-output">Waiting for query.</div>
+          </section>
+        </div>
+      </section>
+
+      <section class="pane">
+        <div class="pane-header">
+          <h2>ChatGPT</h2>
+          <div class="truth-block" id="truth-chatgpt">
+            <div class="truth-metric">
+              <span class="label">Truth Score</span>
+              <span class="value" data-truth-score>--</span>
+            </div>
+            <div class="truth-metric">
+              <span class="label">Claim Coverage</span>
+              <span class="value" data-coverage-score>--</span>
+            </div>
+            <div class="truth-claims" data-claim-list></div>
+          </div>
+        </div>
+        <div class="pane-body">
+          <section>
+            <h3>ChatGPT Response</h3>
+            <div class="content-box" id="chatgpt-output">Waiting for query.</div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="newtab.js"></script>
+  </body>
+</html>

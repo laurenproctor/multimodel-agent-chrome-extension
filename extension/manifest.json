@@ -1,0 +1,16 @@
+{
+  "name": "Multi-AI New Tab Search",
+  "description": "New tab page with Google search, Gemini, Claude, and ChatGPT responses.",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "host_permissions": [
+    "https://www.googleapis.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.openai.com/*",
+    "https://api.anthropic.com/*",
+    "https://factchecktools.googleapis.com/*"
+  ]
+}
